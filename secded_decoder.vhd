@@ -62,7 +62,7 @@ parity_check <= parity_rx xor
 
 -- secded
 process(hamming, syndrome, parity_check)
-    variable error_pos : integer range 0 to 12;
+    variable error_pos : integer range 0 to 15;
 begin
     corrected <= hamming;
     err_1bit  <= '0';
@@ -92,3 +92,4 @@ d_out(7) <= corrected(11);
 d_out(8) <= corrected(12);
 
 end behavioral;
+
